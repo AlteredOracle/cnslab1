@@ -1,0 +1,44 @@
+//gnupg
+sudo yum install gnupg
+gpg --gen-key
+Give name and email address and then O
+Provide a password
+gedit file.txt(Type some word and save)
+gpg -c file.txt
+gpg -o decryptedfile.txt -d file.txt.gpg
+
+
+//honeypot
+cd Downloads
+unzip Honeyd-master.zip
+cd Honeyd-master
+sudo yum install automake -y
+sudo yum install libevent-devel libedit-devel libpcap-devel bison flex libtool libdnet-devel zlib-devel make nmap -y
+sudo yum install python
+./autogen.sh
+./configure
+make 
+sudo make install
+honeyd -f /etc/honeyd.conf
+nmap -p 25,80,443,1025 'IP address of the system'
+
+
+//rootkit
+cd Downloads
+tar -xvzf rkhunter-1.4.6.tar.gz
+cd rkhunter-1.4.6/
+sudo yum install openssl-devel
+sudo yum install compat-openssl10-devel --allowerasing
+sudo ./installer.sh --layout default --install
+sudo /usr/local/bin/rkhunter --update
+sudo /usr/local/bin/rkhunter --propupd
+"vi /etc/cron.daily/rkhunter.sh
+ chmod 755 /etc/cron.daily/rkhunter.sh"
+sudo rkhunter --check
+
+
+//impt common commands
+chmod +x filename
+
+chmod u+rx filename
+sudo chmod -R 700
